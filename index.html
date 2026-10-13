@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#050914">
+    <meta name="description" content="HYDRA GAMER: computadoras, componentes, accesorios y servicio técnico.">
+
+    <title>HYDRA GAMER | Tecnología y Gaming</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="linea-neon"></div>
+
+    <header class="encabezado">
+        <a class="marca" href="#inicio" aria-label="HYDRA GAMER, inicio">
+            <img src="imagenes/hydra-logo.png"
+                 alt="Logo HYDRA"
+                 class="logo-img"
+                 onerror="this.style.display='none'">
+
+            <span class="logo-texto">
+                HYDRA<span> GAMER</span>
+            </span>
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="navegacion">
+            ☰
+        </button>
+
+        <nav class="navegacion" id="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#tienda">Tienda</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="acciones-header">
+            <button class="boton-icono"
+                    id="abrirLogin"
+                    type="button">
+                ♙ <span id="textoLogin">Ingresar</span>
+            </button>
+
+            <button class="boton-icono boton-carrito"
+                    id="abrirCarrito"
+                    type="button"
+                    aria-label="Abrir carrito">
+                🛒 <span>Carrito</span>
+                <span id="cantidadCarrito" class="contador-carrito">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+        <section class="hero" id="inicio">
+            <div class="hero-contenido">
+                <span class="etiqueta">
+                    ● TECNOLOGÍA · GAMING · INNOVACIÓN
+                </span>
+
+                <h1>
+                    DOMINA<br>
+                    <span class="texto-neon">TU UNIVERSO</span>
+                </h1>
+
+                <p>
+                    Potencia tu mundo con tecnología gamer,
+                    componentes de alto rendimiento y soporte técnico.
+                </p>
+
+                <div class="hero-botones">
+                    <a class="boton boton-principal" href="#tienda">
+                        EXPLORAR TIENDA ↗
+                    </a>
+
+                    <a class="boton boton-secundario" href="#servicios">
+                        SERVICIOS TÉCNICOS
+                    </a>
+                </div>
+
+                <div class="hero-datos">
+                    <div>
+                        <strong>GAMING</strong>
+                        <span>Equipamiento</span>
+                    </div>
+
+                    <div>
+                        <strong>HARDWARE</strong>
+                        <span>Componentes</span>
+                    </div>
+
+                    <div>
+                        <strong>SOPORTE</strong>
+                        <span>Servicio técnico</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-sello">
+                <img src="imagenes/hydra-pixel-volando.gif"
+                     alt="Hydra pixelada volando"
+                     class="hero-logo-img">
+                <small>HYDRA SYSTEM</small>
+            </div>
+        </section>
+
+        <!-- VENTAJAS -->
+        <section class="ventajas">
+            <article>
+                <span>⚡</span>
+                <div>
+                    <strong>Potencia tecnológica</strong>
+                    <p>Equipos y accesorios para tu setup.</p>
+                </div>
+            </article>
+
+            <article>
+                <span>🛠️</span>
+                <div>
+                    <strong>Soporte especializado</strong>
+                    <p>Mantenimiento y diagnóstico de PC.</p>
+                </div>
+            </article>
+
+            <article>
+                <span>💬</span>
+                <div>
+                    <strong>Atención directa</strong>
+                    <p>Consultas por WhatsApp.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- TIENDA -->
+        <section class="seccion" id="tienda">
+            <div class="titulo-seccion">
+                <div>
+                    <span class="sobretitulo">EQUIPA TU SETUP</span>
+                    <h2>TIENDA <span class="texto-neon">GAMER</span></h2>
+                    <p>Encuentra tu próximo componente favorito.</p>
+                </div>
+
+                <span class="numero-seccion">01 / STORE</span>
+            </div>
+
+            <div class="controles">
+                <input
+                    type="search"
+                    id="buscador"
+                    placeholder="⌕ Buscar productos..."
+                    aria-label="Buscar productos">
+
+                <select id="filtro" aria-label="Filtrar categoría">
+                    <option value="todos">Todas las categorías</option>
+                    <option value="pc">Computadoras</option>
+                    <option value="componentes">Componentes</option>
+                    <option value="perifericos">Periféricos</option>
+                </select>
+
+                <select id="orden" aria-label="Ordenar productos">
+                    <option value="default">Orden recomendado</option>
+                    <option value="menor">Precio: menor a mayor</option>
+                    <option value="mayor">Precio: mayor a menor</option>
+                    <option value="nombre">Nombre: A-Z</option>
+                </select>
+            </div>
+
+            <p class="contador-productos" id="contador"></p>
+
+            <div class="catalogo" id="catalogo"></div>
+
+            <p class="aviso-precios">
+                * Precios de demostración en soles peruanos.
+                Confirma disponibilidad y precio final por WhatsApp.
+            </p>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section class="seccion seccion-alterna" id="servicios">
+            <div class="titulo-seccion">
+                <div>
+                    <span class="sobretitulo">TU PC EN BUENAS MANOS</span>
+                    <h2>SERVICIOS <span class="texto-neon">TÉCNICOS</span></h2>
+                    <p>Soluciones para mantener tu equipo en forma.</p>
+                </div>
+
+                <span class="numero-seccion">02 / SUPPORT</span>
+            </div>
+
+            <div class="servicios">
+                <article class="tarjeta-servicio">
+                    <span class="icono-servicio">🛠️</span>
+                    <h3>Mantenimiento de PC</h3>
+                    <p>Limpieza, revisión y mantenimiento preventivo.</p>
+                    <strong class="precio">Desde S/ 50</strong>
+                    <button class="boton boton-secundario consultar-servicio"
+                            type="button"
+                            data-servicio="Mantenimiento de PC">
+                        Consultar servicio ↗
+                    </button>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <span class="icono-servicio">💿</span>
+                    <h3>Instalación de Windows</h3>
+                    <p>Instalación, configuración y controladores.</p>
+                    <strong class="precio">Consultar precio</strong>
+                    <button class="boton boton-secundario consultar-servicio"
+                            type="button"
+                            data-servicio="Instalación de Windows">
+                        Consultar servicio ↗
+                    </button>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <span class="icono-servicio">🖥️</span>
+                    <h3>Ensamblaje gamer</h3>
+                    <p>Asesoría de componentes y montaje de equipos.</p>
+                    <strong class="precio">Consultar precio</strong>
+                    <button class="boton boton-secundario consultar-servicio"
+                            type="button"
+                            data-servicio="Ensamblaje gamer">
+                        Consultar servicio ↗
+                    </button>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <span class="icono-servicio">🔍</span>
+                    <h3>Diagnóstico técnico</h3>
+                    <p>Evaluación de fallas de hardware y software.</p>
+                    <strong class="precio">Desde S/ 25</strong>
+                    <button class="boton boton-secundario consultar-servicio"
+                            type="button"
+                            data-servicio="Diagnóstico técnico">
+                        Consultar servicio ↗
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="seccion" id="contacto">
+            <div class="titulo-seccion">
+                <div>
+                    <span class="sobretitulo">HABLEMOS DE TECNOLOGÍA</span>
+                    <h2>CONTACTO <span class="texto-neon">HYDRA</span></h2>
+                    <p>Cuéntanos qué necesitas y prepara tu consulta.</p>
+                </div>
+
+                <span class="numero-seccion">03 / CONTACT</span>
+            </div>
+
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <span class="icono-servicio">💬</span>
+                    <h3>¿Listo para mejorar tu setup?</h3>
+                    <p>
+                        Escríbenos para consultar productos,
+                        disponibilidad o servicios técnicos.
+                    </p>
+                    <a class="boton boton-principal"
+                       href="https://wa.me/51993882709"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        ABRIR WHATSAPP ↗
+                    </a>
+                </div>
+
+                <form id="formContacto" class="formulario">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre"
+                           type="text" maxlength="80"
+                           autocomplete="name" required>
+
+                    <label for="servicio">¿Qué necesitas?</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Seleccionar una opción</option>
+                        <option>Compra de productos</option>
+                        <option>Mantenimiento de PC</option>
+                        <option>Instalación de Windows</option>
+                        <option>Ensamblaje gamer</option>
+                        <option>Diagnóstico técnico</option>
+                        <option>Otro</option>
+                    </select>
+
+                    <label for="detalle">Tu mensaje</label>
+                    <textarea id="detalle" name="detalle"
+                              rows="4" maxlength="1000"
+                              required></textarea>
+
+                    <button class="boton boton-principal" type="submit">
+                        CONSULTAR POR WHATSAPP ↗
+                    </button>
+
+                    <p id="estadoFormulario" class="estado-formulario"
+                       role="status"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <a class="marca" href="#inicio">
+            <img src="imagenes/hydra-logo.png"
+                 alt=""
+                 class="logo-img"
+                 onerror="this.style.display='none'">
+            <span class="logo-texto">HYDRA<span> GAMER</span></span>
+        </a>
+
+        <p>Tu pasión por la tecnología, en un solo lugar.</p>
+        <p class="copyright">© 2026 HYDRA GAMER · Perú</p>
+    </footer>
+
+    <!-- VENTANA DEL CARRITO -->
+    <div class="fondo-modal oculto" id="fondoCarrito">
+        <section class="modal modal-carrito"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="tituloCarrito">
+
+            <div class="modal-cabecera">
+                <div>
+                    <span class="sobretitulo">TU SELECCIÓN</span>
+                    <h2 id="tituloCarrito">MI CARRITO</h2>
+                </div>
+                <button class="cerrar-modal" type="button"
+                        data-cerrar="fondoCarrito"
+                        aria-label="Cerrar carrito">×</button>
+            </div>
+
+            <div id="listaCarrito" class="lista-carrito"></div>
+
+            <div class="total-carrito">
+                <span>Subtotal</span>
+                <strong id="totalCarrito">S/ 0.00</strong>
+            </div>
+
+            <p class="nota-carrito">
+                El pedido se enviará por WhatsApp para confirmar
+                stock, precio final y forma de pago.
+            </p>
+
+            <button class="boton boton-principal ancho-completo"
+                    id="finalizarCompra" type="button">
+                CONTINUAR POR WHATSAPP ↗
+            </button>
+
+            <button class="boton boton-secundario ancho-completo"
+                    id="vaciarCarrito" type="button">
+                Vaciar carrito
+            </button>
+        </section>
+    </div>
+
+    <!-- VENTANA DE ACCESO -->
+    <div class="fondo-modal oculto" id="fondoLogin">
+        <section class="modal modal-login"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="tituloLogin">
+
+            <div class="modal-cabecera">
+                <div>
+                    <span class="sobretitulo">ACCESO DE USUARIO</span>
+                    <h2 id="tituloLogin">HYDRA ID</h2>
+                </div>
+                <button class="cerrar-modal" type="button"
+                        data-cerrar="fondoLogin"
+                        aria-label="Cerrar acceso">×</button>
+            </div>
+
+            <p class="texto-modal">
+                Interfaz de demostración de inicio de sesión.
+            </p>
+
+            <form id="formLogin" class="formulario">
+                <label for="emailLogin">Correo electrónico</label>
+                <input id="emailLogin" type="email"
+                       autocomplete="email" required>
+
+                <label for="passwordLogin">Contraseña</label>
+                <input id="passwordLogin" type="password"
+                       autocomplete="current-password"
+                       minlength="6" maxlength="128" required>
+
+                <button class="boton boton-principal" type="submit">
+                    ENTRAR A HYDRA
+                </button>
+
+                <p id="estadoLogin" class="estado-formulario"
+                   role="status"></p>
+            </form>
+
+            <p class="aviso-seguridad">
+                Esta demostración no crea cuentas ni verifica contraseñas
+                en un servidor. No introduzcas contraseñas reales.
+            </p>
+
+            <button class="boton boton-secundario ancho-completo oculto"
+                    id="cerrarSesion" type="button">
+                CERRAR SESIÓN DE DEMOSTRACIÓN
+            </button>
+        </section>
+    </div>
+
+    <!-- HYDRABOT -->
+    <button id="abrirBot" type="button" aria-label="Abrir HydraBot">
+        🤖 <span>HydraBot</span>
+    </button>
+
+    <section id="ventanaBot" class="ventana-bot oculto"
+             aria-label="Chat de ayuda HydraBot">
+
+        <div class="bot-cabecera">
+            <div>
+                <strong>🐉 HydraBot</strong>
+                <small>Asistente de HYDRA GAMER</small>
+            </div>
+
+            <button id="cerrarBot" type="button"
+                    aria-label="Cerrar chat">×</button>
+        </div>
+
+        <div id="mensajes" class="mensajes" aria-live="polite">
+            <div class="mensaje bot">
+                ¡Hola! 💚 Soy HydraBot. Pregúntame por productos,
+                precios, mantenimiento o contacto.
+            </div>
+        </div>
+        <form id="formBot" class="form-bot">
+            <input id="entradaBot"
+                   type="text"
+                   placeholder="Escribe tu pregunta..."
+                   maxlength="500"
+                   aria-label="Mensaje para HydraBot"
+                   required>
+
+            <button type="submit" aria-label="Enviar mensaje">
+                ➤
+            </button>
+        </form>
+    </section>
+
+
+</body>
+</html>
